@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ucn.afta.cl.rankeducn.Activity.Register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/rut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="RUT"
+            android:inputType="textPersonName"
+            android:paddingBottom="20dp"
+            tools:ignore="MissingConstraints,TextFields"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="99dp" />
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:paddingBottom="20dp"
+            tools:ignore="MissingConstraints,TextFields"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="99dp" />
+
+        <EditText
+            android:id="@+id/apellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Apellido"
+            android:inputType="textPersonName"
+            android:paddingBottom="20dp"
+            tools:ignore="MissingConstraints,TextFields"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="99dp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/prompt_email"
+            android:inputType="textPersonName"
+            android:paddingBottom="20dp"
+            tools:ignore="MissingConstraints,TextFields"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="99dp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/prompt_password"
+            android:inputType="textPassword"
+            android:paddingBottom="20dp"
+            android:text=""
+            tools:ignore="MissingConstraints,TextFields"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="176dp" />
+
+        <EditText
+            android:id="@+id/password2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Repetir Password"
+            android:inputType="textPassword"
+            android:paddingBottom="20dp"
+            android:text=""
+            tools:ignore="MissingConstraints,TextFields"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="176dp" />
+
+        <Button
+            android:id="@+id/ingresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:text="@string/ingresar" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
