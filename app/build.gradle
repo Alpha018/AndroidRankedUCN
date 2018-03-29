@@ -54,4 +54,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile 'org.apache.commons:commons-lang3:3.5'
 
+    compile 'com.github.f0ris.sweetalert:library:1.5.1'
+
+    implementation 'com.android.support:cardview-v7:26.1.0'
 }

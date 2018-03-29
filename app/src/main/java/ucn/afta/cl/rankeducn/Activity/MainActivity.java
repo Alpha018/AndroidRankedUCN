@@ -3,6 +3,7 @@ package ucn.afta.cl.rankeducn.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.registrar)
     TextView registrar;
+
+    @BindView(R.id.cardView)
+    CardView login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentReg = new Intent(MainActivity.this, Register.class);
                 MainActivity.this.startActivity(intentReg);
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // hacer login
             }
         });
     }
