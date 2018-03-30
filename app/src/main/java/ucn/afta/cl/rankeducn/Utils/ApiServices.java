@@ -15,4 +15,10 @@ public interface ApiServices {
     @PUT("/api/usuario/register")
     Call<ResponseRegister> request(@Body RequestRegister requestRegister);
 
+    @POST("/api/usuario/login")
+    Call<ResponseLogin> login(@Body RequestLogin requestLogin);
+
+    @POST("/api/usuario/login")
+    Call<ResponseToken> token(@Body RequestLogin requestLogin);
+
 }

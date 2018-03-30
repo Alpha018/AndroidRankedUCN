@@ -19,38 +19,38 @@ public class RequestRegister {
      * Device ID para enviar a backend
      */
     @Getter
-    String deviceID;
+    private String deviceId;
 
     /**
      * RUT del {@link Usuario}
      */
     @Getter
-    String rut;
+    private String rut;
 
     /**
      * Password del {@link Usuario}
      */
     @Getter
     @Setter
-    String password;
+    private String password;
 
     /**
      * Email del {@link Usuario}
      */
     @Getter
     @Setter
-    String email;
+    private String email;
 
     /**
      * Nombre del {@link Usuario}
      */
     @Getter
     @Setter
-    String nombre;
+    private String nombre;
 
     /**
      * Apellido del {@link Usuario}
      */
     @Getter
-    String apellido;
+    private String apellido;
 }

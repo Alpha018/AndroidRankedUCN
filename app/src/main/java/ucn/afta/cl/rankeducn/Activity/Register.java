@@ -1,5 +1,7 @@
 package ucn.afta.cl.rankeducn.Activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -52,7 +54,6 @@ public class Register extends AppCompatActivity {
     @BindView(R.id.volver)
     TextView volver;
 
-    public final String BASE_URL = "http://192.168.1.148:8000";
     SweetAlertDialog sweetAlertDialog;
 
     @Override
@@ -111,12 +112,12 @@ public class Register extends AppCompatActivity {
                         .apellido(apellido)
                         .email(email)
                         .password(password)
-                        .deviceID(deviceID)
+                        .deviceId(deviceID)
                         .build();
 
                 //desde aqui se usa el retrofit
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(getString(R.string.BASE_URL))
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
                 final ApiServices service = retrofit.create(ApiServices.class);
@@ -129,7 +130,7 @@ public class Register extends AppCompatActivity {
                         if (response.isSuccessful()) {
 
                             ResponseRegister tokenResponse = response.body();
-                            Toast.makeText(getApplicationContext(), tokenResponse.getId(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Registrado Correctamente", Toast.LENGTH_LONG).show();
                             finish();
 
                         } else {

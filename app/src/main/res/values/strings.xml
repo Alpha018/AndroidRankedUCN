@@ -16,4 +16,7 @@
     <string name="ranked_ucn">Ranked UCN</string>
     <string name="ingresar">Ingresar</string>
     <string name="registrar">Registrar</string>
+    <string name="preference_file_key">sharedData</string>
+    <string name="BASE_URL">http://192.168.1.148:8000</string>
+    <string name="token">token</string>
 </resources>
