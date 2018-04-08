@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         if (!valor.equals("NOTOKEN")) {
             Intent intentReg = new Intent(MainActivity.this, Profile.class);
             MainActivity.this.startActivity(intentReg);
+            finish();
         }
 
         registrar.setOnClickListener(new View.OnClickListener() {
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void salvarDatos(final ResponseLogin usuario){
+    private void salvarDatos(final ResponseLogin usuario) {
         Context context = getApplicationContext();
         SharedPreferences sharedPref = context.getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    private void salvarToken(final ResponseToken token){
+    private void salvarToken(final ResponseToken token) {
         Context context = getApplicationContext();
         SharedPreferences sharedPref = context.getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);

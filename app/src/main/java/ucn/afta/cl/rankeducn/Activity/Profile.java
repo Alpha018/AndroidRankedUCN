@@ -121,7 +121,9 @@ public class Profile extends AppCompatActivity {
         cambiarAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intentAvatar = new Intent(Profile.this, UploadImage.class);
+                Profile.this.startActivity(intentAvatar);
+                finish();
             }
         });
     }
