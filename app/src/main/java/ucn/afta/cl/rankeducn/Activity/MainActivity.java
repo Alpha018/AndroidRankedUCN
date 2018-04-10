@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         Intent intentReg = new Intent(MainActivity.this, Profile.class);
                                         MainActivity.this.startActivity(intentReg);
-
+                                        finish();
                                     } else {
                                         try {
                                             JSONObject jObjError = new JSONObject(response.errorBody().string());
