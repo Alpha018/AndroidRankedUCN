@@ -230,7 +230,7 @@ public class UploadImage extends AppCompatActivity {
 
                     String file_path = file_send.getAbsolutePath();
                     String file_name = file_send.getName();
-                    if (!content_type_send.equals("image/jpeg") || !content_type_send.equals("image/jpg") || !content_type_send.equals("image/png") || content_type_send == null) {
+                    if (!content_type_send.equals("image/jpeg") && !content_type_send.equals("image/jpg") && !content_type_send.equals("image/png") || content_type_send == null) {
                         sweetAlertDialog = new SweetAlertDialog(UploadImage.this, SweetAlertDialog.ERROR_TYPE);
                         sweetAlertDialog.setTitleText("Error de formato");
                         sweetAlertDialog.setContentText("El archivo seleccionado no es una imagen valida");
