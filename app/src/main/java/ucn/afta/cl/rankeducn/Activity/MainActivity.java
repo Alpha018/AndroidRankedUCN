@@ -1,5 +1,6 @@
 package ucn.afta.cl.rankeducn.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     String clave;
 
+    ProgressDialog progress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                progress = new ProgressDialog(MainActivity.this);
+                progress.setTitle("Registrando");
+                progress.setMessage("Por favor espere...");
+                progress.show();
+
                 usuario = user.getText().toString().trim();
                 clave = password.getText().toString().trim();
 
@@ -95,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 call.enqueue(new Callback<ResponseLogin>() {
                     @Override
                     public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
+                        progress.dismiss();
                         if (response.isSuccessful()) {
 
                             ResponseLogin responseLogin = response.body();
@@ -158,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ResponseLogin> call, Throwable t) {
+                        progress.dismiss();
                         Toast.makeText(getApplicationContext(), "Error al conectar con el servidor", Toast.LENGTH_LONG).show();
                     }
                 });
@@ -179,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("partidasJugadas", usuario.getPartidasJugadas());
         editor.putInt("partidasGanadas", usuario.getPartidasGanadas());
         editor.putInt("partidasPerdidas", usuario.getPartidasPerdidas());
+        editor.putString("tokenFirebase", usuario.getTokenFirebase());
         editor.apply();
     }
 

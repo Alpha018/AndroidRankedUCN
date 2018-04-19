@@ -1,11 +1,14 @@
 package ucn.afta.cl.rankeducn.Activity;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONObject;
 
@@ -54,6 +57,8 @@ public class Register extends AppCompatActivity {
 
     SweetAlertDialog sweetAlertDialog;
 
+    ProgressDialog progress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +72,11 @@ public class Register extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                progress = new ProgressDialog(Register.this);
+                progress.setTitle("Registrando");
+                progress.setMessage("Por favor espere...");
+                progress.show();
 
                 String rut = rutView.getText().toString().trim();
                 String nombre = nombreView.getText().toString().trim();
@@ -104,6 +114,8 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
+                String firebase = FirebaseInstanceId.getInstance().getToken();
+
                 final RequestRegister usuario = RequestRegister.builder()
                         .rut(rut)
                         .nombre(nombre)
@@ -111,6 +123,7 @@ public class Register extends AppCompatActivity {
                         .email(email)
                         .password(password)
                         .deviceId(deviceID)
+                        .tokenFirebase(firebase)
                         .build();
 
                 //desde aqui se usa el retrofit
@@ -124,7 +137,7 @@ public class Register extends AppCompatActivity {
                 call.enqueue(new Callback<ResponseRegister>() {
                     @Override
                     public void onResponse(Call<ResponseRegister> call, Response<ResponseRegister> response) {
-
+                        progress.dismiss();
                         if (response.isSuccessful()) {
 
                             ResponseRegister tokenResponse = response.body();
@@ -155,6 +168,7 @@ public class Register extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ResponseRegister> call, Throwable t) {
+                        progress.dismiss();
                         Toast.makeText(getApplicationContext(), "Error al enviar la petición", Toast.LENGTH_LONG).show();
                     }
                 });

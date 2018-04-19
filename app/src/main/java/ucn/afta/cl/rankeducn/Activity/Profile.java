@@ -56,6 +56,9 @@ public class Profile extends AppCompatActivity {
     @BindView(R.id.changeAvatar)
     CardView cambiarAvatar;
 
+    @BindView(R.id.pendiente)
+    CardView pendientes;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +91,8 @@ public class Profile extends AppCompatActivity {
         top10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intentTop10 = new Intent(Profile.this, Top10.class);
+                Profile.this.startActivity(intentTop10);
             }
         });
 
@@ -96,7 +100,9 @@ public class Profile extends AppCompatActivity {
         match.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intentAvatar = new Intent(Profile.this, Match.class);
+                Profile.this.startActivity(intentAvatar);
+                finish();
             }
         });
 
@@ -123,6 +129,15 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentAvatar = new Intent(Profile.this, UploadImage.class);
                 Profile.this.startActivity(intentAvatar);
+            }
+        });
+
+        pendientes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentPendientes = new Intent(Profile.this, PartidasPendientes.class);
+                Profile.this.startActivity(intentPendientes);
+                finish();
             }
         });
     }

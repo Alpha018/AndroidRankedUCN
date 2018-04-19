@@ -5,4 +5,5 @@
     <color name="colorAccent">#892929</color>
     <color name="upperBar">#2fb9d8</color>
     <color name="primary">#2fb9d8</color>
+    <color name="barraUpper">#2fc2e2</color>
 </resources>

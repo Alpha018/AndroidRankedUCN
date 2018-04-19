@@ -90,8 +90,6 @@ public class UploadImage extends AppCompatActivity {
         botonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentProfile = new Intent(UploadImage.this, Profile.class);
-                UploadImage.this.startActivity(intentProfile);
                 finish();
             }
         });
@@ -112,8 +110,8 @@ public class UploadImage extends AppCompatActivity {
                 }
 
                 progress = new ProgressDialog(UploadImage.this);
-                progress.setTitle("Uploading");
-                progress.setMessage("Please wait...");
+                progress.setTitle("Enviando");
+                progress.setMessage("Por favor espere...");
                 progress.show();
 
                 HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -151,8 +149,6 @@ public class UploadImage extends AppCompatActivity {
                                 editor.putString("avatar", jObjError.getString("avatar"));
                                 editor.apply();
 
-                                Intent regreso = new Intent(UploadImage.this, Profile.class);
-                                UploadImage.this.startActivity(regreso);
                                 finish();
 
                             } catch (Exception e) {

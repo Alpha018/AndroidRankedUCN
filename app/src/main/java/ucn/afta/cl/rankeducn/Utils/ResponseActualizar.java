@@ -7,10 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by black on 29/03/2018.
+ * Creado por black el 18/04/2018.
  */
-
-public class ResponseLogin {
+public class ResponseActualizar {
     @SerializedName("puntaje")
     @Expose
     @Getter
@@ -22,36 +21,6 @@ public class ResponseLogin {
     @Getter
     @Setter
     int partidasJugadas;
-
-    @SerializedName("apellido")
-    @Expose
-    @Getter
-    @Setter
-    String apellido;
-
-    @SerializedName("nombre")
-    @Expose
-    @Getter
-    @Setter
-    String nombre;
-
-    @SerializedName("email")
-    @Expose
-    @Getter
-    @Setter
-    String email;
-
-    @SerializedName("rut")
-    @Expose
-    @Getter
-    @Setter
-    String rut;
-
-    @SerializedName("avatar")
-    @Expose
-    @Getter
-    @Setter
-    String avatar;
 
     @SerializedName("partidasGanadas")
     @Expose
@@ -70,10 +39,4 @@ public class ResponseLogin {
     @Getter
     @Setter
     String id;
-
-    @SerializedName("tokenFirebase")
-    @Expose
-    @Getter
-    @Setter
-    String tokenFirebase;
 }

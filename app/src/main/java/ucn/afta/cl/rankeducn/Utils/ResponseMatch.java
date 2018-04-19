@@ -7,10 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by black on 29/03/2018.
+ * Creado por black el 18/04/2018.
  */
-
-public class ResponseLogin {
+public class ResponseMatch {
     @SerializedName("puntaje")
     @Expose
     @Getter
@@ -70,10 +69,4 @@ public class ResponseLogin {
     @Getter
     @Setter
     String id;
-
-    @SerializedName("tokenFirebase")
-    @Expose
-    @Getter
-    @Setter
-    String tokenFirebase;
 }

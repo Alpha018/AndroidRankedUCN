@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "483543150791",
+    "firebase_url": "https://rankeducn.firebaseio.com",
+    "project_id": "rankeducn",
+    "storage_bucket": "rankeducn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483543150791:android:5d7da16604a2536f",
+        "android_client_info": {
+          "package_name": "ucn.afta.cl.rankeducn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483543150791-9qc50s8gampqcbe7ebh3dn9vtbfg36ob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvLaF1mTaVRQeRTdKp3xBFx0HpvuSxDDk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

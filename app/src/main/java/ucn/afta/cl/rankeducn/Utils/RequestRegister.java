@@ -53,4 +53,10 @@ public class RequestRegister {
      */
     @Getter
     private String apellido;
+
+    /**
+     * Token para enviar mensajes por android Firebase
+     */
+    @Getter
+    private String tokenFirebase;
 }
